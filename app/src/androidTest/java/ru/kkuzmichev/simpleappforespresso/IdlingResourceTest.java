@@ -49,5 +49,9 @@ public class IdlingResourceTest {
                 withId(R.id.item_number),
                 withText("7")
         )).check(matches(isDisplayed()));
+
+        onView(withId(R.id.recycle_view))
+                .check(matches(new RecyclerViewItemCountMatcher(10)))
+                .check(new RecyclerViewAssertion());
     }
 }
